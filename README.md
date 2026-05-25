@@ -430,12 +430,12 @@
                 <span class="tech-badge">Limited Edition</span>
                 <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=400&q=80" alt="Nước hoa phi thuyền" class="product-img">
                 <div>
-                    <h3 class="product-title">Phi Thuyền KhuếT Tán</h3>
+                    <h3 class="product-title">Phi Thuyền Khuếch Tán</h3>
                     <p class="product-desc">Nước hoa cao cấp đặt taplo xe hơi. Cánh quạt tua-bin tự quay bằng động cơ năng lượng mặt trời.</p>
                 </div>
                 <div class="price-box">
                     <span class="price">290.000đ</span>
-                    <button class="btn-buy" onclick="triggerOrder('Phi Thuyền KhuếT Tán')">Nạp Gear</button>
+                    <button class="btn-buy" onclick="triggerOrder('Phi Thuyền Khuếch Tán')">Nạp Gear</button>
                 </div>
             </div>
 
