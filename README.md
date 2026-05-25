@@ -66,21 +66,21 @@
             min-height: var(--header-height);
         }
 
-        /* CỤM LOGO VÀ TÊN CÔNG TY CĂN TRÁI */
-        .logo-link {
+        /* CỤM Logo VÀ TÊN CÔNG TY CĂN TRÁI */
+        .Logo-link {
             display: flex;
             align-items: center;
             gap: 15px; 
             text-decoration: none;
         }
 
-        .logo-img {
+        .Logo-img {
             max-height: 100px; 
             width: auto;
             display: block;
         }
 
-        .logo-text {
+        .Logo-text {
             font-weight: 800;
             font-size: 1.8rem;
             color: var(--primary-green);
@@ -88,7 +88,7 @@
             letter-spacing: 0.5px;
         }
 
-        .logo-text span {
+        .Logo-text span {
             color: var(--primary-blue);
         }
 
@@ -347,8 +347,8 @@
         }
 
         @media (max-width: 600px) {
-            .logo-img { max-height: 80px; } 
-            .logo-text { font-size: 1.4rem; }
+            .Logo-img { max-height: 80px; } 
+            .Logo-text { font-size: 1.4rem; }
             nav { gap: 10px; flex-wrap: wrap; justify-content: center;}
             nav a { font-size: 0.85rem; }
             
@@ -362,9 +362,9 @@
 
     <header>
         <div class="header-container">
-            <a href="#" class="logo-link">
-                <img src="logo.png" alt="Dobaco Logistics Logo" class="logo-img">
-                <span class="logo-text">DOBACO <span>LOGISTICS</span></span>
+            <a href="#" class="Logo-link">
+                <img src="Logo.png" alt="Dobaco Logistics Logo" class="Logo-img">
+                <span class="Logo-text">DOBACO <span>LOGISTICS</span></span>
             </a>
             
             <nav>
