@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
@@ -16,8 +17,7 @@
             --white: #ffffff;
             --border-color: #e8eaed;
             --font-main: 'Inter', sans-serif;
-            /* Đã tăng chiều cao header để chứa Logo siêu to */
-            --header-height: 140px; 
+            --header-height: 120px; 
         }
 
         * {
@@ -36,14 +36,15 @@
             overflow-x: hidden; 
         }
 
+        /* KHUNG CHỨA SẢN PHẨM Ở GIỮA ĐÃ ĐƯỢC NỚI RỘNG THÊM */
         .container {
             width: 100%;
-            max-width: 1200px; 
+            max-width: 1350px; /* Đã tăng từ 1200px lên 1350px để khung thẻ to hơn */
             margin: 0 auto; 
-            padding: 0 15px; 
+            padding: 0 20px; 
         }
 
-        /* ==================== HEADER ==================== */
+        /* ==================== HEADER TRÀN VIỀN ==================== */
         header {
             width: 100%;
             min-height: var(--header-height);
@@ -52,32 +53,34 @@
             position: fixed;
             top: 0;
             z-index: 1000;
-            padding: 10px 0; /* Thêm padding cho dễ thở */
         }
 
-        header .container {
-            height: 100%;
+        /* Khung riêng cho Header để tràn ra sát viền màn hình */
+        .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap; /* Cho phép rớt dòng nếu thiếu chỗ */
+            width: 100%;
+            height: 100%;
+            padding: 10px 4%; /* Khoảng cách sát mép trái phải màn hình */
+            min-height: var(--header-height);
         }
 
-        /* CỤM Logo VÀ TÊN CÔNG TY */
-        .Logo-link {
+        /* CỤM LOGO VÀ TÊN CÔNG TY CĂN TRÁI */
+        .logo-link {
             display: flex;
             align-items: center;
-            gap: 15px; /* Khoảng cách giữa ảnh và chữ */
+            gap: 15px; 
             text-decoration: none;
         }
 
-        .Logo-img {
-            max-height: 120px; /* Logo to gấp gần 3 lần so với bản cũ (50px) */
+        .logo-img {
+            max-height: 100px; 
             width: auto;
             display: block;
         }
 
-        .Logo-text {
+        .logo-text {
             font-weight: 800;
             font-size: 1.8rem;
             color: var(--primary-green);
@@ -85,19 +88,19 @@
             letter-spacing: 0.5px;
         }
 
-        .Logo-text span {
+        .logo-text span {
             color: var(--primary-blue);
         }
 
         nav {
             display: flex;
-            gap: 20px;
+            gap: 25px;
         }
 
         nav a {
             color: var(--text-dark);
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 1.05rem;
             font-weight: 700;
             transition: 0.3s;
             text-transform: uppercase;
@@ -110,14 +113,13 @@
         /* ==================== HERO BANNER ==================== */
         .hero {
             background: linear-gradient(135deg, #e8f0fe 0%, #e6f4ea 100%);
-            /* Đẩy nội dung xuống sâu hơn để không bị header to che lấp */
             padding-top: calc(var(--header-height) + 60px); 
             padding-bottom: 80px;
             text-align: center;
         }
 
         .hero h1 {
-            font-size: 2.6rem;
+            font-size: 2.8rem;
             font-weight: 800;
             color: var(--primary-blue);
             margin-bottom: 20px;
@@ -125,15 +127,15 @@
         }
 
         .hero p {
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             color: var(--text-gray);
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto 30px;
         }
 
         .btn-main {
             display: inline-block;
-            padding: 14px 35px;
+            padding: 15px 35px;
             font-size: 1rem;
             font-weight: 700;
             color: var(--white);
@@ -170,9 +172,10 @@
             color: var(--primary-green);
         }
 
+        /* ÉP CHUẨN 2 CỘT RỘNG TRÊN MÀN HÌNH MÁY TÍNH */
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            grid-template-columns: 1fr 1fr; /* Chia đúng 2 ô bằng nhau, full chiều rộng container */
             gap: 40px;
         }
 
@@ -195,15 +198,15 @@
 
         .product-img {
             width: 100%;
-            height: 350px;
+            height: 400px; /* Ảnh to hơn để cân xứng với card rộng */
             object-fit: contain;
             background: #fff;
             border-bottom: 1px solid var(--border-color);
-            padding: 10px;
+            padding: 15px;
         }
 
         .product-content {
-            padding: 25px;
+            padding: 30px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -213,9 +216,9 @@
             display: inline-block;
             background: #ffebee;
             color: #d32f2f;
-            padding: 4px 10px;
+            padding: 5px 12px;
             border-radius: 4px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 700;
             margin-bottom: 15px;
             align-self: flex-start;
@@ -226,12 +229,15 @@
             color: var(--primary-green);
         }
 
+        /* TÊN SẢN PHẨM ĐẢM BẢO NẰM TRÊN 1 DÒNG */
         .product-title {
             font-size: 1.3rem;
             font-weight: 700;
             color: var(--primary-blue);
             margin-bottom: 15px;
-            line-height: 1.4;
+            white-space: nowrap; /* Ép không rớt dòng */
+            overflow: hidden; 
+            text-overflow: ellipsis; /* Hiện dấu ... nếu màn hình quá bé */
         }
 
         .product-specs {
@@ -242,9 +248,9 @@
 
         .product-specs li {
             position: relative;
-            padding-left: 20px;
-            margin-bottom: 8px;
-            font-size: 0.95rem;
+            padding-left: 22px;
+            margin-bottom: 10px;
+            font-size: 1rem;
             color: var(--text-gray);
         }
 
@@ -257,13 +263,13 @@
         }
 
         .price-contact {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 700;
             color: #d32f2f;
             text-align: center;
             margin-top: auto;
             margin-bottom: 15px;
-            padding: 10px;
+            padding: 12px;
             background: #f8f9fa;
             border-radius: 6px;
         }
@@ -278,7 +284,7 @@
 
         footer p {
             color: #9aa0a6;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             margin-bottom: 5px;
         }
 
@@ -323,35 +329,42 @@
             color: var(--text-gray); font-size: 1.5rem; cursor: pointer;
         }
 
-        /* ==================== RESPONSIVE (ĐIỆN THOẠI/TABLET) ==================== */
+        /* ==================== RESPONSIVE CHO ĐIỆN THOẠI/TABLET ==================== */
+        @media (max-width: 1024px) {
+            .product-title {
+                font-size: 1.1rem; /* Giảm nhẹ font chữ tên SP trên màn nhỏ để vẫn giữ 1 dòng */
+            }
+        }
+
         @media (max-width: 900px) {
-            header .container { justify-content: center; flex-direction: column; gap: 15px; }
-            .hero { padding-top: 220px; } /* Đẩy banner xuống thấp hơn vì menu rớt dòng */
+            .header-container { flex-direction: column; justify-content: center; gap: 15px; padding: 15px; }
+            .hero { padding-top: 220px; } 
             .hero h1 { font-size: 2.2rem; }
+            
+            /* Dưới 900px thì chuyển thành 1 cột xếp chồng lên nhau */
+            .grid-container { grid-template-columns: 1fr; }
+            .product-title { white-space: normal; } /* Bỏ ép 1 dòng trên điện thoại */
         }
 
         @media (max-width: 600px) {
-            .Logo-link { flex-direction: column; gap: 5px; } /* Đẩy Logo lên trên chữ trên mobile */
-            .Logo-img { max-height: 80px; } /* Thu nhỏ một chút trên mobile để không chiếm hết màn hình */
-            .Logo-text { font-size: 1.4rem; }
+            .logo-img { max-height: 80px; } 
+            .logo-text { font-size: 1.4rem; }
             nav { gap: 10px; flex-wrap: wrap; justify-content: center;}
-            nav a { font-size: 0.8rem; }
+            nav a { font-size: 0.85rem; }
             
             .hero { padding-top: 240px; }
             .hero h1 { font-size: 1.8rem; }
-            .hero p { font-size: 1rem; }
-            .section-title { font-size: 1.8rem; }
-            .product-img { height: 250px; }
+            .product-img { height: 280px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="container">
-            <a href="#" class="Logo-link">
-                <img src="Logo.png" alt="Dobaco Logistics Logo" class="Logo-img">
-                <span class="Logo-text">DOBACO <span>LOGISTICS</span></span>
+        <div class="header-container">
+            <a href="#" class="logo-link">
+                <img src="logo.png" alt="Dobaco Logistics Logo" class="logo-img">
+                <span class="logo-text">DOBACO <span>LOGISTICS</span></span>
             </a>
             
             <nav>
@@ -379,7 +392,7 @@
                     <img src="k23.jpg" alt="Máy Sưởi Gốm DB HOME K23-J" class="product-img" onerror="this.src='https://images.unsplash.com/photo-1634825964860-6fc58f278c2e?auto=format&fit=crop&w=600&q=80'">
                     <div class="product-content">
                         <span class="badge">PHÂN PHỐI SỈ/LẺ SỐ LƯỢNG LỚN</span>
-                        <h3 class="product-title">Máy Sưởi Gốm Treo Tường / Để Bàn K23-J</h3>
+                        <h3 class="product-title" title="Máy Sưởi Gốm Treo Tường / Để Bàn K23-J">Máy Sưởi Gốm Treo Tường / Để Bàn K23-J</h3>
                         <ul class="product-specs">
                             <li><strong>Công suất:</strong> 1200W - 2000W</li>
                             <li><strong>Bảo hành:</strong> 12 tháng</li>
@@ -395,8 +408,8 @@
                 <div class="product-card">
                     <img src="k11.jpg" alt="Quạt Sưởi Gốm DB HOME K11-D" class="product-img" onerror="this.src='https://images.unsplash.com/photo-1581057421867-b586071fb8ea?auto=format&fit=crop&w=600&q=80'">
                     <div class="product-content">
-                        <span class="badge badge-green">NỘI ĐỊA TRUNG - SẴN KHO</span>
-                        <h3 class="product-title">Quạt Sưởi Gốm Dáng Đứng DB HOME K11-D</h3>
+                        <span class="badge badge-green">NHẬP KHẨU - SẴN KHO</span>
+                        <h3 class="product-title" title="Quạt Sưởi Gốm Dáng Đứng DB HOME K11-D">Quạt Sưởi Gốm Dáng Đứng DB HOME K11-D</h3>
                         <ul class="product-specs">
                             <li><strong>Công suất:</strong> 1400W - 2000W</li>
                             <li><strong>Bảo hành:</strong> 12 tháng</li>
