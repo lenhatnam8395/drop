@@ -57,7 +57,7 @@
 
         .header-container {
             display: flex;
-            justify-content: space-between; /* Đẩy logo sang trái, menu sang phải */
+            justify-content: space-between; /* Đẩy Logo sang trái, menu sang phải */
             align-items: center;
             width: 95%;
             max-width: 1400px;
@@ -65,21 +65,21 @@
             flex-wrap: wrap; /* Cho phép xuống dòng nếu màn hình thu nhỏ, chống mất chữ */
         }
 
-        /* CỤM LOGO VÀ TÊN CÔNG TY */
-        .logo-link {
+        /* CỤM Logo VÀ TÊN CÔNG TY */
+        .Logo-link {
             display: flex;
             align-items: center;
             gap: 15px; 
             text-decoration: none;
         }
 
-        .logo-img {
+        .Logo-img {
             max-height: 80px; /* Chỉnh lại tỷ lệ chuẩn để không làm méo khung header */
             width: auto;
             display: block;
         }
 
-        .logo-text {
+        .Logo-text {
             font-weight: 800;
             font-size: 1.7rem;
             color: var(--primary-green);
@@ -87,7 +87,7 @@
             letter-spacing: 0.5px;
         }
 
-        .logo-text span {
+        .Logo-text span {
             color: var(--primary-blue);
         }
 
