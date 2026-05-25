@@ -16,7 +16,7 @@
             --white: #ffffff;
             --border-color: #e8eaed;
             --font-main: 'Inter', sans-serif;
-            /* Đã tăng chiều cao header để chứa logo siêu to */
+            /* Đã tăng chiều cao header để chứa Logo siêu to */
             --header-height: 140px; 
         }
 
@@ -63,21 +63,21 @@
             flex-wrap: wrap; /* Cho phép rớt dòng nếu thiếu chỗ */
         }
 
-        /* CỤM LOGO VÀ TÊN CÔNG TY */
-        .logo-link {
+        /* CỤM Logo VÀ TÊN CÔNG TY */
+        .Logo-link {
             display: flex;
             align-items: center;
             gap: 15px; /* Khoảng cách giữa ảnh và chữ */
             text-decoration: none;
         }
 
-        .logo-img {
+        .Logo-img {
             max-height: 120px; /* Logo to gấp gần 3 lần so với bản cũ (50px) */
             width: auto;
             display: block;
         }
 
-        .logo-text {
+        .Logo-text {
             font-weight: 800;
             font-size: 1.8rem;
             color: var(--primary-green);
@@ -85,7 +85,7 @@
             letter-spacing: 0.5px;
         }
 
-        .logo-text span {
+        .Logo-text span {
             color: var(--primary-blue);
         }
 
@@ -331,9 +331,9 @@
         }
 
         @media (max-width: 600px) {
-            .logo-link { flex-direction: column; gap: 5px; } /* Đẩy logo lên trên chữ trên mobile */
-            .logo-img { max-height: 80px; } /* Thu nhỏ một chút trên mobile để không chiếm hết màn hình */
-            .logo-text { font-size: 1.4rem; }
+            .Logo-link { flex-direction: column; gap: 5px; } /* Đẩy Logo lên trên chữ trên mobile */
+            .Logo-img { max-height: 80px; } /* Thu nhỏ một chút trên mobile để không chiếm hết màn hình */
+            .Logo-text { font-size: 1.4rem; }
             nav { gap: 10px; flex-wrap: wrap; justify-content: center;}
             nav a { font-size: 0.8rem; }
             
@@ -349,9 +349,9 @@
 
     <header>
         <div class="container">
-            <a href="#" class="logo-link">
-                <img src="logo.png" alt="Dobaco Logistics Logo" class="logo-img">
-                <span class="logo-text">DOBACO <span>LOGISTICS</span></span>
+            <a href="#" class="Logo-link">
+                <img src="Logo.png" alt="Dobaco Logistics Logo" class="Logo-img">
+                <span class="Logo-text">DOBACO <span>LOGISTICS</span></span>
             </a>
             
             <nav>
