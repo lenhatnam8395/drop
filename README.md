@@ -383,7 +383,7 @@
                 <div class="product-card">
                     <img src="k11.jpg" alt="Quạt Sưởi Gốm DB HOME K11-D" class="product-img" onerror="this.src='https://images.unsplash.com/photo-1581057421867-b586071fb8ea?auto=format&fit=crop&w=600&q=80'">
                     <div class="product-content">
-                        <span class="badge badge-green">NỘI ĐỊA TRUNG - SẴN KHO</span>
+                        <span class="badge badge-green">NHẬP KHẨU - SẴN KHO</span>
                         <h3 class="product-title">Quạt Sưởi Gốm Dáng Đứng DB HOME K11-D</h3>
                         <ul class="product-specs">
                             <li><strong>Công suất:</strong> 1400W - 2000W</li>
