@@ -32,7 +32,7 @@
             color: var(--text-main);
             font-family: var(--font-body);
             font-size: 18px;
-            overflow-x: hidden; /* Ngăn chặn cuộn ngang toàn trang */
+            overflow-x: hidden;
             background-image: 
                 linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
@@ -42,7 +42,7 @@
         /* ==================== THANH ĐIỀU HƯỚNG (HEADER) ==================== */
         header {
             width: 100%;
-            padding: 15px 5%; /* Giảm padding để có thêm không gian */
+            padding: 15px 5%;
             background: rgba(6, 6, 10, 0.85);
             backdrop-filter: blur(10px);
             border-bottom: 2px solid rgba(0, 240, 255, 0.2);
@@ -52,7 +52,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap; /* Cho phép các phần tử rớt dòng nếu thiếu chỗ */
+            flex-wrap: wrap;
         }
 
         .logo {
@@ -74,7 +74,7 @@
 
         nav {
             display: flex;
-            gap: 20px; /* Dùng gap thay vì margin để kiểm soát khoảng cách tốt hơn */
+            gap: 20px;
             flex-wrap: wrap;
         }
 
@@ -86,7 +86,7 @@
             letter-spacing: 1px;
             transition: 0.3s;
             text-transform: uppercase;
-            white-space: nowrap; /* Tránh chữ bị bẻ gãy lộn xộn */
+            white-space: nowrap;
         }
 
         nav a:hover, nav a.active {
@@ -149,7 +149,6 @@
             letter-spacing: 1px;
         }
 
-        /* Nút bấm tự co giãn */
         .btn-cyber {
             font-family: var(--font-tech);
             padding: 12px 30px;
@@ -165,8 +164,8 @@
             clip-path: polygon(15px 0%, 100% 0%, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0% 100%, 0% 15px);
             transition: 0.3s;
             box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
-            max-width: 100%; /* Giữ nút không bị tràn */
-            white-space: normal; /* Cho phép rớt dòng chữ trong nút nếu màn quá bé */
+            max-width: 100%;
+            white-space: normal;
         }
 
         .btn-cyber:hover {
@@ -203,7 +202,7 @@
 
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Tối ưu cho thẻ nhỏ gọn hơn */
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 30px;
             max-width: 1200px;
             margin: 0 auto;
@@ -274,7 +273,7 @@
             align-items: center;
             border-top: 1px dashed rgba(255,255,255,0.1);
             padding-top: 15px;
-            flex-wrap: wrap; /* Cho phép giá và nút rớt dòng nếu chật */
+            flex-wrap: wrap;
             gap: 10px;
         }
 
@@ -325,7 +324,7 @@
             justify-content: center;
             align-items: center;
             backdrop-filter: blur(5px);
-            padding: 15px; /* Giữ khoảng cách với mép màn hình */
+            padding: 15px;
         }
 
         .modal-content {
@@ -362,17 +361,15 @@
         }
         .btn-close:hover { color: var(--matrix-blue); }
 
-        /* ==================== ĐÁP ỨNG THIẾT BỊ DI ĐỘNG (RESPONSIVE) ==================== */
-        /* Cho màn hình máy tính bảng / Laptop nhỏ */
+        /* ==================== RESPONSIVE ==================== */
         @media (max-width: 900px) {
             header { flex-direction: column; padding: 15px 0; gap: 15px; }
             nav { justify-content: center; width: 100%; }
             .hero h1 { font-size: 2.5rem; }
         }
 
-        /* Cho màn hình điện thoại di động */
         @media (max-width: 600px) {
-            nav { display: none; } /* Ẩn bớt menu ngang trên mobile cho gọn */
+            nav { display: none; }
             .hero h1 { font-size: 2rem; }
             .hero p { font-size: 1rem; }
             .section-title { font-size: 1.8rem; }
@@ -389,7 +386,7 @@
         <nav>
             <a href="#home" class="active">Hệ Thống</a>
             <a href="#products">Kho Vũ Khí</a>
-            <a href="#contact">Kết Nối</a>
+            <a href="https://zalo.me/0383748395" target="_blank">Kết Nối</a>
         </nav>
     </header>
 
@@ -433,12 +430,12 @@
                 <span class="tech-badge">Limited Edition</span>
                 <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=400&q=80" alt="Nước hoa phi thuyền" class="product-img">
                 <div>
-                    <h3 class="product-title">Phi Thuyền Khuếch Tán</h3>
+                    <h3 class="product-title">Phi Thuyền KhuếT Tán</h3>
                     <p class="product-desc">Nước hoa cao cấp đặt taplo xe hơi. Cánh quạt tua-bin tự quay bằng động cơ năng lượng mặt trời.</p>
                 </div>
                 <div class="price-box">
                     <span class="price">290.000đ</span>
-                    <button class="btn-buy" onclick="triggerOrder('Phi Thuyền Khuếch Tán')">Nạp Gear</button>
+                    <button class="btn-buy" onclick="triggerOrder('Phi Thuyền KhuếT Tán')">Nạp Gear</button>
                 </div>
             </div>
 
@@ -480,7 +477,10 @@
 
         function triggerOrder(productName) {
             document.getElementById('modalProductTitle').innerText = "KÍCH HOẠT: " + productName;
-            document.getElementById('zaloLink').href = "https://zalo.me/#"; 
+            
+            /* SỬA ĐỔI 2: Đưa số điện thoại Zalo của bạn vào sự kiện click để nhảy trực tiếp khi bấm nút trong Modal */
+            document.getElementById('zaloLink').href = "https://zalo.me/0383748395"; 
+            
             document.getElementById('orderModal').style.display = 'flex';
         }
 
