@@ -8,18 +8,18 @@
     <style>
         /* ==================== CẤU HÌNH BIẾN MÀU SẮC DOBACO ==================== */
         :root {
-            --primary-blue: #1a73e8; /* Xanh dương Dobaco */
-            --primary-green: #34a853; /* Xanh lá Dobaco */
+            --primary-blue: #1a73e8; 
+            --primary-green: #34a853; 
             --bg-light: #f8f9fa;
             --text-dark: #202124;
             --text-gray: #5f6368;
             --white: #ffffff;
             --border-color: #e8eaed;
             --font-main: 'Inter', sans-serif;
-            --header-height: 80px; /* Chiều cao header cố định */
+            /* Đã tăng chiều cao header để chứa logo siêu to */
+            --header-height: 140px; 
         }
 
-        /* RESET & GLOBAL STYLES */
         * {
             margin: 0;
             padding: 0;
@@ -33,26 +33,26 @@
             font-family: var(--font-main);
             font-size: 16px;
             line-height: 1.6;
-            overflow-x: hidden; /* Ngăn chặn cuộn ngang tuyệt đối */
+            overflow-x: hidden; 
         }
 
-        /* LỚP CHỨA NỘI DUNG TRUNG TÂM - GIÚP CHỐNG TRÀN KHUNG */
         .container {
             width: 100%;
-            max-width: 1200px; /* Chiều rộng tối đa trên màn hình lớn */
-            margin: 0 auto; /* Căn giữa */
-            padding: 0 15px; /* Khoảng cách an toàn với mép màn hình */
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 15px; 
         }
 
         /* ==================== HEADER ==================== */
         header {
             width: 100%;
-            height: var(--header-height);
+            min-height: var(--header-height);
             background: var(--white);
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             position: fixed;
             top: 0;
             z-index: 1000;
+            padding: 10px 0; /* Thêm padding cho dễ thở */
         }
 
         header .container {
@@ -60,20 +60,33 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap; /* Cho phép rớt dòng nếu thiếu chỗ */
         }
 
-        /* Logo điều chỉnh để chứa ảnh */
-        .Logo-link {
+        /* CỤM LOGO VÀ TÊN CÔNG TY */
+        .logo-link {
             display: flex;
             align-items: center;
-            height: 100%;
+            gap: 15px; /* Khoảng cách giữa ảnh và chữ */
             text-decoration: none;
         }
 
-        .Logo-img {
-            max-height: 50px; /* Chiều cao tối đa của Logo */
-            width: auto; /* Tự động điều chỉnh chiều rộng */
+        .logo-img {
+            max-height: 120px; /* Logo to gấp gần 3 lần so với bản cũ (50px) */
+            width: auto;
             display: block;
+        }
+
+        .logo-text {
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: var(--primary-green);
+            white-space: nowrap;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-text span {
+            color: var(--primary-blue);
         }
 
         nav {
@@ -84,7 +97,7 @@
         nav a {
             color: var(--text-dark);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 1rem;
             font-weight: 700;
             transition: 0.3s;
             text-transform: uppercase;
@@ -97,7 +110,8 @@
         /* ==================== HERO BANNER ==================== */
         .hero {
             background: linear-gradient(135deg, #e8f0fe 0%, #e6f4ea 100%);
-            padding-top: calc(var(--header-height) + 60px); /* Khoảng cách tránh header */
+            /* Đẩy nội dung xuống sâu hơn để không bị header to che lấp */
+            padding-top: calc(var(--header-height) + 60px); 
             padding-bottom: 80px;
             text-align: center;
         }
@@ -119,8 +133,8 @@
 
         .btn-main {
             display: inline-block;
-            padding: 12px 30px;
-            font-size: 0.95rem;
+            padding: 14px 35px;
+            font-size: 1rem;
             font-weight: 700;
             color: var(--white);
             background: var(--primary-blue);
@@ -135,7 +149,7 @@
 
         .btn-main:hover {
             background: var(--primary-green);
-            transform: translateY(-1px);
+            transform: translateY(-2px);
         }
 
         /* ==================== SẢN PHẨM ==================== */
@@ -145,7 +159,7 @@
 
         .section-title {
             text-align: center;
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 800;
             color: var(--text-dark);
             margin-bottom: 50px;
@@ -156,12 +170,10 @@
             color: var(--primary-green);
         }
 
-        /* ĐIỀU CHỈNH GRID ĐỂ CHỐNG TRÀN MOBILE */
         .grid-container {
             display: grid;
-            /* Sửa minmax từ 350px xuống 280px để an toàn cho mobile bé */
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 40px;
         }
 
         .product-card {
@@ -172,17 +184,18 @@
             transition: 0.3s;
             display: flex;
             flex-direction: column;
-            height: 100%; /* Đảm bảo các card cao bằng nhau */
+            height: 100%;
         }
 
         .product-card:hover {
-            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             border-color: var(--primary-blue);
+            transform: translateY(-5px);
         }
 
         .product-img {
             width: 100%;
-            height: 300px;
+            height: 350px;
             object-fit: contain;
             background: #fff;
             border-bottom: 1px solid var(--border-color);
@@ -190,7 +203,7 @@
         }
 
         .product-content {
-            padding: 20px;
+            padding: 25px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -202,7 +215,7 @@
             color: #d32f2f;
             padding: 4px 10px;
             border-radius: 4px;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             font-weight: 700;
             margin-bottom: 15px;
             align-self: flex-start;
@@ -214,24 +227,24 @@
         }
 
         .product-title {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 700;
             color: var(--primary-blue);
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             line-height: 1.4;
         }
 
         .product-specs {
             list-style: none;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             flex-grow: 1;
         }
 
         .product-specs li {
             position: relative;
-            padding-left: 18px;
-            margin-bottom: 6px;
-            font-size: 0.9rem;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
             color: var(--text-gray);
         }
 
@@ -244,29 +257,29 @@
         }
 
         .price-contact {
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: #d32f2f;
             text-align: center;
-            margin-top: auto; /* Đẩy giá xuống đáy */
-            margin-bottom: 12px;
-            padding: 8px;
+            margin-top: auto;
+            margin-bottom: 15px;
+            padding: 10px;
             background: #f8f9fa;
-            border-radius: 4px;
+            border-radius: 6px;
         }
 
         /* ==================== FOOTER ==================== */
         footer {
             background: var(--text-dark);
             color: var(--white);
-            padding: 30px 0;
+            padding: 40px 0;
             text-align: center;
         }
 
         footer p {
             color: #9aa0a6;
-            font-size: 0.85rem;
-            margin-bottom: 4px;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
         }
 
         /* ==================== MODAL ZALO ==================== */
@@ -284,9 +297,9 @@
 
         .modal-content {
             background: var(--white);
-            border-radius: 10px;
-            padding: 25px;
-            max-width: 400px;
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 450px;
             width: 100%;
             text-align: center;
             position: relative;
@@ -294,42 +307,40 @@
 
         .modal-content h3 {
             color: var(--primary-blue);
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
 
         .modal-content p {
             color: var(--text-gray);
-            margin-bottom: 20px;
-            font-size: 0.95rem;
+            margin-bottom: 25px;
+            font-size: 1rem;
         }
 
         .btn-close {
             position: absolute;
-            top: 10px; right: 12px;
+            top: 15px; right: 15px;
             background: transparent; border: none;
-            color: var(--text-gray); font-size: 1.4rem; cursor: pointer;
+            color: var(--text-gray); font-size: 1.5rem; cursor: pointer;
         }
 
-        /* ==================== PHẢN HỒI THIẾT BỊ (MEDIA QUERIES) ==================== */
-        /* Cho màn hình máy tính bảng và laptop nhỏ */
+        /* ==================== RESPONSIVE (ĐIỆN THOẠI/TABLET) ==================== */
         @media (max-width: 900px) {
-            .hero h1 { font-size: 2rem; }
-            .hero p { font-size: 1.05rem; }
-            .grid-container { gap: 20px; }
+            header .container { justify-content: center; flex-direction: column; gap: 15px; }
+            .hero { padding-top: 220px; } /* Đẩy banner xuống thấp hơn vì menu rớt dòng */
+            .hero h1 { font-size: 2.2rem; }
         }
 
-        /* Cho màn hình điện thoại */
         @media (max-width: 600px) {
-            :root { --header-height: 70px; } /* Header thấp hơn trên mobile */
-            header .container { flex-direction: column; justify-content: center; gap: 5px; padding: 5px 0;}
-            .Logo-img { max-height: 40px; }
-            nav { gap: 12px; }
-            nav a { font-size: 0.75rem; }
+            .logo-link { flex-direction: column; gap: 5px; } /* Đẩy logo lên trên chữ trên mobile */
+            .logo-img { max-height: 80px; } /* Thu nhỏ một chút trên mobile để không chiếm hết màn hình */
+            .logo-text { font-size: 1.4rem; }
+            nav { gap: 10px; flex-wrap: wrap; justify-content: center;}
+            nav a { font-size: 0.8rem; }
             
-            .hero h1 { font-size: 1.6rem; }
-            .hero p { font-size: 0.95rem; padding: 0 5px;}
-            .section-title { font-size: 1.6rem; margin-bottom: 30px;}
-            .product-title { font-size: 1.1rem; }
+            .hero { padding-top: 240px; }
+            .hero h1 { font-size: 1.8rem; }
+            .hero p { font-size: 1rem; }
+            .section-title { font-size: 1.8rem; }
             .product-img { height: 250px; }
         }
     </style>
@@ -338,10 +349,11 @@
 
     <header>
         <div class="container">
-            <a href="#" class="Logo-link">
-                <img src="Logo.png" alt="Dobaco Logistics Logo" class="Logo-img" onerror="this.style.display='none'; document.getElementById('Logo-fallback').style.display='block';">
-                <span id="Logo-fallback" style="display:none; font-weight:800; font-size:1.2rem; color:var(--primary-green);">DOBACO <span style="color:var(--primary-blue);">LOGISTICS</span></span>
+            <a href="#" class="logo-link">
+                <img src="logo.png" alt="Dobaco Logistics Logo" class="logo-img">
+                <span class="logo-text">DOBACO <span>LOGISTICS</span></span>
             </a>
+            
             <nav>
                 <a href="#home">Trang Chủ</a>
                 <a href="#products">Sản Phẩm</a>
@@ -383,7 +395,7 @@
                 <div class="product-card">
                     <img src="k11.jpg" alt="Quạt Sưởi Gốm DB HOME K11-D" class="product-img" onerror="this.src='https://images.unsplash.com/photo-1581057421867-b586071fb8ea?auto=format&fit=crop&w=600&q=80'">
                     <div class="product-content">
-                        <span class="badge badge-green">NHẬP KHẨU - SẴN KHO</span>
+                        <span class="badge badge-green">NỘI ĐỊA TRUNG - SẴN KHO</span>
                         <h3 class="product-title">Quạt Sưởi Gốm Dáng Đứng DB HOME K11-D</h3>
                         <ul class="product-specs">
                             <li><strong>Công suất:</strong> 1400W - 2000W</li>
