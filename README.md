@@ -63,15 +63,15 @@
         }
 
         /* Logo điều chỉnh để chứa ảnh */
-        .logo-link {
+        .Logo-link {
             display: flex;
             align-items: center;
             height: 100%;
             text-decoration: none;
         }
 
-        .logo-img {
-            max-height: 50px; /* Chiều cao tối đa của logo */
+        .Logo-img {
+            max-height: 50px; /* Chiều cao tối đa của Logo */
             width: auto; /* Tự động điều chỉnh chiều rộng */
             display: block;
         }
@@ -322,7 +322,7 @@
         @media (max-width: 600px) {
             :root { --header-height: 70px; } /* Header thấp hơn trên mobile */
             header .container { flex-direction: column; justify-content: center; gap: 5px; padding: 5px 0;}
-            .logo-img { max-height: 40px; }
+            .Logo-img { max-height: 40px; }
             nav { gap: 12px; }
             nav a { font-size: 0.75rem; }
             
@@ -338,9 +338,9 @@
 
     <header>
         <div class="container">
-            <a href="#" class="logo-link">
-                <img src="logo.png" alt="Dobaco Logistics Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='block';">
-                <span id="logo-fallback" style="display:none; font-weight:800; font-size:1.2rem; color:var(--primary-green);">DOBACO <span style="color:var(--primary-blue);">LOGISTICS</span></span>
+            <a href="#" class="Logo-link">
+                <img src="Logo.png" alt="Dobaco Logistics Logo" class="Logo-img" onerror="this.style.display='none'; document.getElementById('Logo-fallback').style.display='block';">
+                <span id="Logo-fallback" style="display:none; font-weight:800; font-size:1.2rem; color:var(--primary-green);">DOBACO <span style="color:var(--primary-blue);">LOGISTICS</span></span>
             </a>
             <nav>
                 <a href="#home">Trang Chủ</a>
